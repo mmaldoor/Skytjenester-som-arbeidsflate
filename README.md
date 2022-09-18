@@ -41,14 +41,14 @@ I følge til *National Institute of Standards and Technology "NIST"*, sky som en
 Nå når vi har forstått hva er skyen, så kan vi fortsette videre til distribusjonsmodellene vi nevnt innledningsvis. 
 Det er tre typer distribusjonsmodeller som hver har sine fordeler og ulemper, og hver av dem ofte blir valgt basert på organisasjonens behov og økonomi. Disse er *Private cloud*, *Public Cloud* og blanding av disse to siste nevnt *Hybrid cloud*.
 
-- Public Cloud 
+- **Public Cloud** 
 
      Denne type skyen bruker en tjenester og infrastruktur som tilbys av en ekstern leverandør. Klienten leie ressurs eller tjenester, og betaler for tjenesten over tid. Dette betyr at klienten eier ingenting av infrastrukturen, og dermed trenger de ikke å vedlikeholde/oppdatere dem heller.
 
     ### Fordeler 
     1. Høy skalerbarhet 
 
-        Store leverandører som Microsoft og amazon har veldig store data sentere med kraftige data maskiner. I tillegg så har de implementert dynamiske mekanismer av tildeling av ressurs som gjør at man kan skalere opp ressursene nesten umiddelbart.
+        Store leverandører som Microsoft og amazon har veldig store datasentere med kraftige data maskiner. I tillegg så har de implementert dynamiske mekanismer av tildeling av ressurs som gjør at man kan skalere opp ressursene nesten umiddelbart.
 
     2. Kostnadsreduksjon
 
@@ -58,9 +58,10 @@ Det er tre typer distribusjonsmodeller som hver har sine fordeler og ulemper, og
 
         Store Cloud som Microsoft tilbyr Katastrofegjenoppretting ved at data-ene blir distribuert over flere lokasjoner. 
 
-    4. Pålitelighet
+    4. Pålitelighet og fleksibilitet
 
         Klienten kan enkelt legge til/slette ressurs eller tjenester ved bruk av en grensesnitt eller terminal.
+
     5. Sikkerhet
 
         Skytjenestetilbydere har ansvaret for sikkerhetsoppdateringer ved oppdagelse av sårbarheter. I tillegg til store skyleverandører som microsoft har sine data beskyttet med kryptering og andre utstyr som "intrusion detection"
@@ -72,9 +73,19 @@ Det er tre typer distribusjonsmodeller som hver har sine fordeler og ulemper, og
         
     Til tross for alle disse fordelene, så har offentlig sky sine ulemper som kan gjør at en bedrift går for en anne type skyløsning som for eksempel lovverk som sier at de må ha data-ene sine lagret lokalt. Andre type ulemper kan være restriksjoner av vis typer applikasjoner eller operativsystemer spm gjør at de kjøper infrastrukturen selv for å kontrollere dette.
 
-- Privat Cloud – Dette betyr å bygge og vedlikeholde infrastruktur på deres egen.
 
-- Hybrid Cloud – Dette betyr å bruke en kombinasjon av offentlig og private skyløsninger.
+
+- **Privat Cloud** 
+    Denne sky typen gir tilnærmet samme fordeler som offentlig sky. Den skiller seg fra offentlig sky er at den har infrastrukturen og ressursene dedikert til en eller utvalgt kunder og ikke for offentligheten (I de fleste tilfeller eid av den organisasjonen). Dette betyr at organisasjonen er ansvarlige og har mer kontroll over hardware og software som blir brukt. 
+
+    ## Fordeler 
+    Som det ble nevnt tidligere, privat sky har mange av den offentlig skyens fordeler, men i tillegg har den også fleksibiliteten og sikkerheten av en on-prem infrastruktur. Mange organisasjoner velge denne typen på grunn av de lokale lovverk som public skyen ikke oppfiller, som foreksempel tilgangs kontroll eller hvor vil data bli lagret, noe som tvinger dem til å kjøpe infrastrukturen selv for å møte det regulatoriskmålet.
+    I tillegg gir privat sky større kontroll over hardware og software som blir brukt.
+
+    ## Ulemper 
+    Den største ulempen med privat sky er at det er kostbart å kjøpe/vedlikeholde  infrastrukturen selv, noe som kan være vanskelig for små bedrifter. Andre ulemper kan være mangle på ekspertise eller teknologier som sky leverandøren har som kan gir mer sikkerhet og ytelse.
+
+- Hybrid Cloud 
 
 
 
@@ -88,3 +99,4 @@ https://www.techopedia.com/definition/29545/resource-pooling
 https://www.spiceworks.com/tech/cloud/articles/what-is-broad-network-access/#:~:text=Broad%20network%20access%20is%20the,resources%20across%20these%20diverse%20platforms.
 
 https://wisdomplexus.com/blogs/pros-cons-public-cloud/
+https://www.ibm.com/cloud/learn/introduction-to-private-cloud
