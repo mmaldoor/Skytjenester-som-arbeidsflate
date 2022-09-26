@@ -1,15 +1,3 @@
-# Skytjenester-som-arbeidsflate
-
-## Oppgave 1 - Teori (50 %)
-
-> 1. Når vi snakker om sky, nevner vi ofte forskjellige utrullingsmodeller (deployment) og tjenestemodeller (service). Hvilke utrullingsmodeller er det snakk om, og hva er forskjellen på disse modellene? Er det noen fordeler og eller ulemper ved noen av disse?
-
-> 2. I de senere årene har det meste kommet «as-a-Service», og Anything (eller Everything) as-a-Service (XaaS) er et generelt, samlebegrep som refererer til levering av alt som en tjeneste. Den anerkjenner det store antallet produkter, verktøy og teknologier som leverandører nå leverer til brukere som en tjeneste over internett i stedet for å levere tjenesten lokalt eller on-prem i en bedrift. I introduksjonsleksjonen snakker vi om IaaS, PaaS og SaaS og hva de representerer. Oppsummer kort hva de forskjellige tjenestemodellene er for noe, og er det noen senario hvor enkelte egner seg bedre enn andre?
-
-> 3. I en typisk bedrift i dag vil det både ansettes nye og avsluttes ansattforhold. I den forbindelse er det ofte tilknyttet en del prosesser som må kjøres igjennom før vedkommende kan komme i gang med sin nye bruker og få tilgang til det vedkommende skal jobbe med / ha tilgang på. Forklar kort hva som typisk må gjøres / kjøres igjennom for en nyansettelse. Her er det viktig å tenkte på både gruppetilhørighet, MFA, opprettelse av passord etc. En kan godt benytte et flytdiagram om en ønsker det for å vise hva som skjer og hvem som gjør hva.
-
-I følge 
-
 # Cloud
 
 Når vi snakker om *Cloud computing* så blir det ofte nevnt forskjellige typer distribusjonsmodeller som blir benyttet for å utrulle skytjenester. Det blir ofte forvirring rundt disse distribusjonsmodellene og hvordan blir de brukt. Men før vi går inn på disse distribusjonsmodellene så vil jeg snakke litt om hva "Cloud" computing er, og hva som må til for at en løsning skal betraktes som "cloud" computing. I denne besvarelsen så kommer betegnelsene "sky" og "cloud" til å brukes om hverandre, og bety det samme.
