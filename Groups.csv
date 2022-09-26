@@ -1,0 +1,11 @@
+DisplayName;Description;MailNickName;GroupTypes;SecurityEnabled;MembershipRuleProcessingState;IsAssignableToRole;
+HR;m365;testhr;DynamicMembership,unified;$true;On;false
+Developers;m365;testdev;DynamicMembership,unified;$true;On;false
+
+HR_sec;Security group for giving HR resouces;testhr;DynamicMembership;$true;On;false
+Developers_sec;Security group for giving HR resouces;testdev;DynamicMembership;$true;On;false
+
+HR_Admins;A group for assigning admin roles to HR admins;testhr;$null;$true;On;true
+Developers_Admins;A group for assigning admin roles to developers admins;testdev;$null;$true;On;true
+
+m365_passwd_reset;Group for letting people reset their Password;test;$null;$true;On;false

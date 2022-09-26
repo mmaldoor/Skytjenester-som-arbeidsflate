@@ -1,0 +1,4 @@
+GivenName;SurName;UserPrincipalName;DisplayName;Altmailaddr;Password;MailNickName;Department;phone;EmployeeType
+Ola;Nordmann;Ola.Nordmann@gorlami.onmicrosoft.com;Ola Nordmann;ola.nordmann@superdupermail.no;sr_2!sdffdf32ad;Ola.Normann;HR;00000000;Admin
+Kari;Nordmann;Kari.Nordmann@gorlami.onmicrosoft.com;Kari Nordmann;kari.nordmann@dupersupermai.com;sr_2!fdfgsg32ad;Kari.Nordmann;Developers;00000000;Admin
+

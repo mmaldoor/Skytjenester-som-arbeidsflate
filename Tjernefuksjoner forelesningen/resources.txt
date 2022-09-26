@@ -1,0 +1,49 @@
+#tildel licence til group
+https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users.actions/set-mguserlicense?view=graph-powershell-1.0
+
+
+# Scripts
+https://github.com/chrisdee/Scripts/blob/master/PowerShell/Working/o365/GetMSOnlineUserLicensesUsage.ps1
+
+https://www.youtube.com/watch?v=NO-dX4A8toc
+
+https://lazyadmin.nl/office-365/best-practice-to-secure-office-365/
+
+
+https://learn.microsoft.com/en-us/azure/active-directory/authentication/tutorial-enable-sspr
+
+https://learn.microsoft.com/en-us/azure/active-directory/fundamentals/concept-fundamentals-security-defaults
+
+https://learn.microsoft.com/en-us/azure/active-directory/authentication/tutorial-enable-azure-mfa
+
+m365_passwd_reset;Group for letting people reset their Password;test;dynamic membership;$true;On
+
+
+
+
+
+if ($group.GroupTypes -eq "DynamicMembership") {
+            $False
+        } else {
+            $True
+        }
+
+
+
+
+if ($group.GroupTypes -contains "DynamicMembership")
+        {
+            @( 
+            $group.GroupTypes
+            )
+
+        } else {
+             $null
+
+
+
+if ($group.GroupTypes -match "DynamicMembership" -or $group.DisplayName -match "reset") {
+            $False
+        } else {
+            $True
+        }
