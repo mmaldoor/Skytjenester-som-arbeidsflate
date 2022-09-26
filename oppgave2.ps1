@@ -72,7 +72,7 @@ foreach ($group in $Groups) {
 # Assignm roles to admin group
 
 <#
-    Her gir jeg en rolle som jeg antar at den er mest sannsynlig egnet for dev_admins. Jeg gjør dette for å illustrere prosessen.
+    Her gir jeg en rolle som jeg antar at den er mest sannsynlig egnet for dev_admins. Jeg gjør dette for å illustrere prosessen. Det samme kan gjøres for andre admin grupper.
 #>
 
 $gp = Get-MgGroup | where {$_.DisplayName -match "sec"}

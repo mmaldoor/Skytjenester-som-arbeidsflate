@@ -98,21 +98,21 @@ Det er tre typer distribusjonsmodeller som alle har sine fordeler og ulemper, og
 # Everything as a service
 
 
-## Infrastructure as a service *IaaS*
+### Infrastructure as a service *IaaS*
 
 Iaas tilbyr data-infrastruktur tilgjengelig som en virtualized tjeneste for brukere. Denne tjenesten inkluderer Servere, nettverk og data storage. De fleste tjenesteleverandører som tilbyr Iaas vedlikeholder resurser og infrastruktur selv. Sluttbrukere derimot er ansvarlige for data, applikasjoner, operativsystemer og innstillinger de kjører på denne infrastrukturen. Iaas er egnet til [system administratorer](https://en.wikipedia.org/wiki/System_administrator), altså bedrifter som vil ha infrastrukturen til å installere sine applikasjoner og data på. Eksempler på denne type tjeneste er Microsoft Azure eller Amazon web services *AWS*
 
 
-## Platform as a service *PaaS*
+### Platform as a service *PaaS*
 
 Pass tilbyr alt av det som IaaS tilbyr, men den har i tillegg et operativsystem, runtime, webserver og database installert på forhånd. Disse tjenestene tilbys i en virtualized miljø som gjør at sluttbrukere kan kjøre og kompilere programmeringskoder enklere og raskere. Pass er egnet for utviklere som vil ha et enkelt og raskt utviklingsmiljø uten å bekymre seg for den underliggende infrastrukturen eller installasjonen av utviklingsverktøy og software. Eksempler på denne type tjeneste er AWS Elastic Beanstalk.
 
-## Software as a service *SaaS*
+### Software as a service *SaaS*
 
 Saas er en on demand service av applikasjon-software for sluttbrukere. I motsetting til typiske kjøpt applikasjoner, så er saas applikasjoner plattformuavhengig og dermed trenger man ikke å installere appen for benytte den, man trenger kun en internet tilkobling. Alle de underliggende resursene blir administrert og forvaltet av tjenesteleverandøren, og tjenesteforburkerne er kun ansvarlig for dataene sine som de bruker i den applikasjonen de benytter, og innstillinger den tilbyr. SaaS er egnet for folk generelt, og alle kan benytte seg av den typen tjeneste når de vil, og det er oftest tilgjengelig i en web browser. Eksempler på denne typen er Microsoft onedrive og Google docs.
 
 
-# En ny ansettelse  
+# Ansettelsesprosessen  
 
 Før ansettelsen, burde det ha blitt implementert noen sikkerhetstrukturer og innstillinger som bidrar til sikkerheten og effekten til brukeradministrasjonen. 
 Først bør vi sikre at MFA er aktivert for denne brukeren. Alle tenant som ble laget etter 2019 har "Default security" aktivert, som innebærer at MFA er aktivert for alle by default. Med dersom organisasjonen vil gjøre unntak for noen brukere så kan de lage en sikkerhets gruppe for MFA.
