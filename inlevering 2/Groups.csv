@@ -1,0 +1,10 @@
+DisplayName;Description;MailNickName;GroupTypes;SecurityEnabled;MembershipRuleProcessingState;IsAssignableToRole;
+
+CyberDyne_HR;m365;Hr;DynamicMembership,unified;$true;On;false
+
+CyberDyne_Developers;m365;Developer;DynamicMembership,unified;$true;On;false
+
+CyberDyne_IT;m365;IT;DynamicMembership,unified;$true;On;false
+
+CyberDyne_Alleansatte;m365;Ansatte-general;DynamicMembership,unified;$true;On;false
+

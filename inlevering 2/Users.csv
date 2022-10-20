@@ -1,0 +1,10 @@
+GivenName;SurName;UserPrincipalName;DisplayName;Altmailaddr;Password;MailNickName;Department;phone;EmployeeType;Usertype;
+Ola;Nordmann;Ola.Nordmann@gorlami.onmicrosoft.com;Ola Nordmann;ola.nordmann@superdupermail.no;sr_2!sdffdf32ad;Ola.Normann;CyberDyne_HR;00000000;Admin;Member;
+Kari;Nordmann;Kari.Nordmann@gorlami.onmicrosoft.com;Kari Nordmann;kari.nordmann@dupersupermai.com;sr_2!fdfgsg32ad;Kari.Nordmann;CyberDyne_HR;00000000;User;Member
+
+Per;Nordmann;Per.Nordmann@gorlami.onmicrosoft.com;Per Nordmann;per.nordmann@superdupermail.no;sr_2!sdffdf32ad;Per.Normann;CyberDyne_IT;00000000;Admin;Member;
+Åse;Nordmann;Åse.Nordmann@gorlami.onmicrosoft.com;Åse Nordmann;åse.nordmann@dupersupermai.com;sr_2!fdfgsg32ad;Åse.Nordmann;CyberDyne_IT;00000000;User;Member
+
+Frank;Nordmann;Frank.Nordmann@gorlami.onmicrosoft.com;Frank Nordmann;frank.nordmann@superdupermail.no;sr_2!sdffdf32ad;Frank.Normann;CyberDyne_Developers;00000000;Admin;Member;
+Casper;Nordmann;Casper.Nordmann@gorlami.onmicrosoft.com;Casper Nordmann;casper.nordmann@superdupermail.no;sr_2!sdffdf32ad;Casper.Normann;CyberDyne_Developers;00000000;Admin;Member;
+
