@@ -1,18 +1,18 @@
-Get-Module MicrosoftTeams
-Install-Module MicrosoftTeams -Force
+
 
 Find-Module -Name ExchangeOnlineManagement | Install-Module
 Import-Module ExchangeOnlineManagement
 Connect-ExchangeOnline
 
 
-Connect-MicrosoftTeams
+
 Get-Team | Select-Object DisplayName,description,GroupId
 
 Install-Module Microsoft.Graph -Scope AllUsers
 
 Connect-MgGraph -Scopes "User.ReadWrite.All","Group.ReadWrite.All","Directory.ReadWrite.All,Policy.Read.All, Policy.ReadWrite.Authorization, Policy.ReadWrite.AuthenticationFlows, UserAuthenticationMethod.Read.All, RoleManagement.ReadWrite.Directory, GroupMember.ReadWrite.All"
 
+<#--------- Creating Unified groups ------------#>
 
 $Groups=Import-Csv Groups.csv -Delimiter ";"
 write-host $groups
@@ -37,13 +37,11 @@ foreach ($group in $Groups) {
              $null
         }
 
-        MailEnabled = $True
+        MailEnabled = $True    # This will enable a mailbox for each group and it will function as a distribution group. For more info, visit https://learn.microsoft.com/en-us/microsoft-365/admin/create-groups/compare-groups?view=o365-worldwide
         MailNickName = $group.MailNickName 
         SecurityEnabled = $True
 
         Visibility = "private"
-
-        # The beneathe settings will only be applied on dynamic groups (No need for if logic)
 
         MembershipRuleProcessingState ='On' 
         MembershipRule = if ($group.displayname -match "Alleansatte") {
@@ -55,25 +53,27 @@ foreach ($group in $Groups) {
 }
 
 
-<# Give licenses#>
+<# Give E5 license for Employes #>
 
-$gp = Get-MgGroup 
+$alleansatte_group = Get-MgGroup | where {$_.DisplayName -eq 'CyberDyne_Alleansatte'}
 
 $sku = Get-MgSubscribedSku -All | where {$_.SkuPartNumber -eq "DEVELOPERPACK_E5"}
 
-foreach ($group in $gp) {
-Set-MgGroupLicense -GroupId $group.id -AddLicenses @{SkuId = $sku.SkuId} -RemoveLicenses @()
-
-}
+Set-MgGroupLicense -GroupId $alleansatte_group.id -AddLicenses @{SkuId = $sku.SkuId} -RemoveLicenses @()
 
 
-<# Making Teams for each group #>
+<#------- Making Teams for each group --------#>
+
+Get-Module MicrosoftTeams
+Install-Module MicrosoftTeams -Force
+Connect-MicrosoftTeams
 
 $groups = Get-MgGroup 
 
 foreach ($group in $groups){
+    
     $id = $group.id
-    New-Team -GroupId $id
+    New-Team -GroupId $id -Visibility Private
 }
 
 <#---------------- Create Users ---------------------#>
@@ -104,11 +104,82 @@ foreach ($user in $myusers) {
 
 
 
-New-Team -DisplayName "PowerShell Team" -Description "New Team for Powershell Team"  -Visibility Private
 
-set-unifiedgroup -identity 'PowerShell Team' -HiddenFromAddressListsEnabled:$false -HiddenFromExchangeClientsEnabled:$false 
+<#-------- Creating rooms ---------#>
 
-get-team | where {$_.displayname -match 'PowerShell Team' } | remove-team
+Find-Module -Name ExchangeOnlineManagement | Install-Module
+Import-Module ExchangeOnlineManagement
+Connect-ExchangeOnline
+
+$Rooms=Import-Csv Rooms.csv -Delimiter ";"
+
+foreach ($room in $Rooms) {
+
+    new-mailbox -Name $room.Name -Office $room.Office -DisplayName $room.Name -Room -ResourceCapacity $room.Capacity
+}
+
+
+
+<#----- Security -----#>
+
+Connect-ExchangeOnline
+
+
+# Anti phishing
+
+Get-AntiPhishPolicy -Identity "Office365 AntiPhish Default"
+
+Set-AntiPhishPolicy `
+-Identity "Office365 AntiPhish Default" `
+-EnableFirstContactSafetyTips $true `
+-EnableOrganizationDomainsProtection $true `
+-EnableTargetedUserProtection $true `
+-PhishThresholdLevel 2 `
+
+# Anti malware
+
+get-MalwareFilterPolicy -Identity Default
+
+Set-MalwareFilterPolicy `
+-Identity Default `
+-EnableFileFilter $true `
+-EnableInternalSenderAdminNotifications $true
+
+# Safe attachment
+
+Get-SafeAttachmentPolicy -Identity 'Built-In Protection Policy'
+
+Set-SafeAttachmentPolicy `
+-Identity 'Built-In Protection Policy' `
+-Redirect $true `
+-RedirectAddress < Specify the admin address to redirect to >
+
+# Anti spam
+
+## Inbound
+
+
+Get-HostedContentFilterPolicy -identity Default
+ 
+
+Set-HostedContentFilterPolicy `
+-identity Default `
+-BulkThreshold 6 `
+-HighConfidenceSpamAction Quarantine `
+-HighConfidencePhishAction Quarantine `
+-PhishSpamAction Quarantine `
+-PhishZapEnabled $true
+-QuarantineRetentionPeriod 30
+-RedirectToRecipients < Specify the email to redirect to >
+
+## Filter
+
+Set-HostedConnectionFilterPolicy "Default" -IPAllowList 192.168.1.10,192.168.1.23 -IPBlockList 10.10.10.0/25 # Bare for å gi et eksempel
+
+
+## Outbound
+
+Set-HostedOutboundSpamFilterPolicy -Identity Default -RecipientLimitExternalPerHour 500 -RecipientLimitInternalPerHour 1000 -RecipientLimitPerDay 1000 -ActionWhenThresholdReached BlockUser -NotifyOutboundSpam $true -NotifyOutboundSpamRecipients < Specify email >
 
 
 
@@ -134,33 +205,17 @@ foreach ($group in $rm) {
 }
 
 
-$rm = get-mguser | where {$_.GivenName -eq "Ola" -Or $_.GivenName -eq "kari"} 
+$rm = get-mguser | where {$_.DisplayName -match 'Nordmann'} 
 
 foreach ($group in $rm) {
     Remove-MgUser -UserId $group.id
 
 }
 
+$rooms = get-mailbox | where {$_.Name -eq 'Tank' -OR $_.Name -eq 'Genisys'}
 
-
-$groups = Get-MgGroup | Where-Object {$_.DisplayName -match "CyberDyne"}
-
-Foreach ($group in $groups) {
-    $department = $group.DisplayName
-    $member = "Member"
-    @{
-        GroupID = $group.Id 
-        GroupTypes = @('Unified', 'DynamicMembership')
-        SecurityEnabled = $true
-        MembershipRuleProcessingState='On'
-        MembershipRule = if ($group.DisplayName -eq "Alle-ansatte-CyberDyne") {
-            "user.usertype -eq `"$member`""
-        } else {
-            "user.department -eq "$department""
-        }
-    } | Update-MgGroup
-
-    Update-MgGroup -GroupID $group.Id -GroupTypes @('Unified', 'DynamicMembership') -SecurityEnabled -MembershipRuleProcessingState 'On' -MembershipRule if ($group.DisplayName -eq "Alle-ansatte-CyberDyne") {"user.usertype -eq `"$member`""} else {"user.department -eq "$department""}
+foreach ($room in $rooms) {
+    remove-mailbox -identity $room.Name
 }
 
 $groups = Get-MgGroup

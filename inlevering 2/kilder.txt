@@ -4,3 +4,12 @@ https://learn.microsoft.com/en-us/microsoft-365/business-premium/m365bp-protect-
 
 
 New-AzureADMSGroup -DisplayName "Marketing Department" -Description "Marketing department group" -MailEnabled $True -SecurityEnabled $True -MailNickname MarketingDepartment -GroupTypes "DynamicMembership", "Unified" -MembershipRule "(User.department -eq ""Marketing"")" -MembershipRuleProcessingState "On"
+
+
+
+#group compare
+https://learn.microsoft.com/en-us/microsoft-365/admin/create-groups/compare-groups?view=o365-worldwide
+
+
+
+https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/tenant-wide-setup-for-increased-security?view=o365-worldwide
