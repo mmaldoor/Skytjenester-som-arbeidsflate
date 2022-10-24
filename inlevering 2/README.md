@@ -81,7 +81,7 @@ Policies:
 
 Safe links er aktivert by default via Built-in protection med de tilstrekkelige instillinger for å beskytte tenanten mot skadelige lenker. Men kan legge lenker man ikke vil skrive om i "Do not rewrite the following URLs in email" delen.
 
-<img src="Pics/Safe_links.png"  width=25% height=25%>
+<img src="Pics/Safe_links.png"  width=50% height=50%>
 
 <br>
 
@@ -137,7 +137,7 @@ Her kan man legge til ip adresser enten om de skal bli blokkert eller at de skal
 
 Her kan man legge noen epost sikkerhetsregler basert på kreterier som man kan spesifisere selv. For eksempel kan man spesifisere at hvis en ekstern bruker utgir seg til å være en admin så blir dem blokkert eller videre sendt til sikkerhetsansvarlig.
 
-<img src="Pics/mail-flow.png"  width=25% height=25%>
+<img src="Pics/mail-flow.png"  width=50% height=50%>
 
 
 <br>
