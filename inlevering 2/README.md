@@ -16,7 +16,7 @@ I dette dokumentet så skal jeg først vise oppsettet til cyberdyne slik jeg lag
 
 ## Flow 
 
-![flow](Pics/flow.png)
+![flow](Pics/Flow.png?raw=true)
 
 
 <br>
