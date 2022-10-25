@@ -13,3 +13,5 @@ https://learn.microsoft.com/en-us/microsoft-365/admin/create-groups/compare-grou
 
 
 https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/tenant-wide-setup-for-increased-security?view=o365-worldwide
+
+https://learn.microsoft.com/en-us/powershell/sharepoint/sharepoint-online/connect-sharepoint-online
